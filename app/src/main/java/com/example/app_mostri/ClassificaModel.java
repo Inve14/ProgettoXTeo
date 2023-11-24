@@ -1,20 +1,27 @@
 package com.example.app_mostri;
 
+import android.util.Log;
+
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
-public class ClassificaModel {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ClassificaModel extends Classifica {
     List<String> contacts;
-    //bisogna creare una lista di Player con caratteristiche "nome_player" e "punteggio_player" --> bisogna creare la classe Player
+    User user;
 
     public ClassificaModel() {
         contacts = new ArrayList<>();
     }
 
     public void simulateLoadData() {
-        for (int i = 0; i<100; i++) {
-            contacts.add("Contact " + i);
-        }
+        contacts.add(user.toString());
     }
 
     public int getContactsCount() {
